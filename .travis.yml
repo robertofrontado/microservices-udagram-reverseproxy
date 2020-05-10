@@ -19,6 +19,6 @@ script:
   - docker tag udagram-reverseproxy $DOCKER_HUB/udagram-reverseproxy:latest
 
 after_success:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_USERNAME" --password-stdin
   - docker push $DOCKER_HUB/udagram-reverseproxy
 
